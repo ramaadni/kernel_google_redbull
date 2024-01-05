@@ -2003,6 +2003,7 @@ int hrtimers_cpu_dying(unsigned int dying_cpu)
 	raw_spin_unlock(&new_base->lock);
 	raw_spin_unlock(&old_base->lock);
 
+<<<<<<< HEAD
 	/* Check, if we got expired work to do */
 	__hrtimer_peek_ahead_timers();
 	local_irq_restore(flags);
@@ -2021,6 +2022,8 @@ int hrtimers_dead_cpu(unsigned int scpu)
 	local_bh_disable();
 	__migrate_hrtimers(scpu, true);
 	local_bh_enable();
+=======
+>>>>>>> 9a2fc41acb69 (hrtimers: Push pending hrtimers away from outgoing CPU earlier)
 	return 0;
 }
 
